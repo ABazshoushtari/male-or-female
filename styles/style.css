@@ -1,0 +1,6 @@
+/* Adding background image, adjusting the size to cover the entire element, and avoid repeating*/
+body {
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
