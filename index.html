@@ -7,18 +7,22 @@
     </head>
     <body>
         <div id="content-box">
-            <div class="col" id="left-col">
+            <div id="left-col">
                 <h1>Mr or Ms?</h1>
                 <form action="https://api.genderize.io/">
                     Name 
                     <input type="text" name="name" maxlength="255"/> <br/>
-                    <input type="radio" name="gender" value="m"/> Male <br />
-                    <input type="radio" name="gender" value="f"/> Female <br />
-                    <button type="button" id="submit">Submit</button> <br />
-                    <button type="button" id="save">Save</button> <br />
+                    <div class="form-item">
+                        <input type="radio" name="gender" value="m"/> Male <br />
+                        <input type="radio" name="gender" value="f"/> Female <br />
+                    </div>
+                    <div class="form-item">
+                        <button type="button" id="submit">Submit</button> <br />
+                        <button type="button" id="save">Save</button> <br />
+                    </div>  
                 </form>
             </div>
-            <div class="col" id="right-col">
+            <div id="right-col">
                 <div class="box" id="prediction-box">
                     <h1>Prediction</h1>
                     <p id="gender-prediction"></p>

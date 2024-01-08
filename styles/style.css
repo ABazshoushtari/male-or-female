@@ -35,7 +35,25 @@ body {
   overflow: hidden;
 }
 
-.col {
-  
+/* Adding space between form elemnts */
+.form-item {
+  margin-top: 15%
 }
 
+/* Adding space between submit button and save button */
+button {
+  margin: 2%
+}
+
+/* create a flex box for right column */
+#right-col {
+  display: flex;
+  flex-direction: column;
+/*   justify-content: space-between; */
+  gap: 25%;
+}
+
+/* Adding margin to paragraphs (saved answer result and prediction result) */
+#right-col p {
+  margin: 10%;
+}
