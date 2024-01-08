@@ -1,6 +1,41 @@
-/* Adding background image, adjusting the size to cover the entire element, and avoid repeating*/
+/* Adding background image, adjusting the size to cover the entire element, and avoid repeating
+creating a flex box for having the main content on the center*/
 body {
   background-image: url("../assets/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
 }
+
+/* adding style to the main content box. putting it on the center of the page. creating a flex box to have 2 columns */
+#content-box {
+  border-style: solid; 
+  border-radius: 50px;
+  border-width: 3px;
+  margin: auto;
+  width: fit-content;
+  padding: 50px;
+  
+/*   position: absolute; top: 30%; left: 30%; */
+/*   position: relative; top: 100px; */
+  
+  
+  background-color: rgba(139, 232, 209, 0.8); 
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+/*   align-items: center; */
+  gap: 100px;
+  overflow: hidden;
+}
+
+.col {
+  
+}
+
