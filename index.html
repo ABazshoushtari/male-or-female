@@ -12,10 +12,11 @@
                 <h1>Mr or Ms?</h1>
                 <form action="https://api.genderize.io/">
                     Name 
-                    <input type="text" name="name" maxlength="255"/> <br/>
+                    <input type="text" name="name" id="nameInput" maxlength="255"/> <br/>
+                    <div id="error"></div>
                     <div class="form-item">
-                        <input type="radio" name="gender" value="m"/> Male <br />
-                        <input type="radio" name="gender" value="f"/> Female <br />
+                        <input type="radio" name="gender" value="Male"/> Male <br />
+                        <input type="radio" name="gender" value="Female"/> Female <br />
                     </div>
                     <div class="form-item">
                         <button type="button" id="submit">Submit</button> <br />
@@ -35,7 +36,6 @@
                     <button type="button" id="clear">Clear</button>
                 </div>
             </div>
-
         </div>
     </body>
 </html>

@@ -57,3 +57,7 @@ button {
 #right-col p {
   margin: 10%;
 }
+
+#error {
+  color: rgba(228, 16, 16, 0.89);
+}
