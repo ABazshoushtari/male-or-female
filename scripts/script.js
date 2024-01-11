@@ -22,21 +22,33 @@ document.getElementById("nameInput").addEventListener("input", function(e) {
 });
 
 document.getElementById("clear-radio").addEventListener("click", function() {
+    checkedRadio = document.querySelector('input[name="gender"]:checked');
+    if (checkedRadio !== null) {
+        checkedRadio.checked = false;
+    }
+    /*
     var radioButtons = document.querySelectorAll('.form-item input[type="radio"]');
 
     radioButtons.forEach(radio => {
         radio.checked = false;
     })
+    */
 })
 
 // saving 
 document.getElementById("save").addEventListener("click", function() {
     var name = document.getElementById("nameInput").value.trim();
-    var selectedGender = document.querySelector('input[name="gender"]:checked').value;
+    var selectedGender = document.querySelector('input[name="gender"]:checked');
+    if (selectedGender !== null) {
+        selectedGender = selectedGender.value
+    }
+    var predictedGender = document.getElementById("gender-prediction").innerHTML;
     
-    // Only save if name is not empty and a gender is selected
+    // save if name is not empty and a gender is selected using radio buttons
     if (name && selectedGender) {
         localStorage.setItem(name, selectedGender);
+    } else if (name && predictedGender) {  // save if name is not empty and a gender is not selected using radio buttons and the gender is predicted
+        localStorage.setItem(name, predictedGender);
     }
 });
 
@@ -56,7 +68,7 @@ document.getElementById("form").onsubmit = function(event) {
             // Check and display saved answer
             var savedGender = localStorage.getItem(name);
             if (savedGender) {
-                document.getElementById("saved-answer").textContent = savedGender;
+                document.getElementById("saved-answer").textContent = name + " is " + savedGender;
             } else {
                 document.getElementById("saved-answer").textContent = "";
             }
