@@ -58,6 +58,7 @@ button {
   margin: 10%;
 }
 
+/* setting color for the error message when the input is invalid */
 #error {
   color: rgba(228, 16, 16, 0.89);
 }
