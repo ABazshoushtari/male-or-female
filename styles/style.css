@@ -50,7 +50,7 @@ button {
   display: flex;
   flex-direction: column;
 /*   justify-content: space-between; */
-  gap: 25%;
+  gap: 10%;
 }
 
 /* Adding margin to paragraphs (saved answer result and prediction result) */

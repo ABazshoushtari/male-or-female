@@ -20,3 +20,40 @@ document.getElementById('nameInput').addEventListener('input', function(e) {
         saveButton.disabled = false;
     }
 });
+
+// saving 
+document.getElementById('save').addEventListener('click', function() {
+    var name = document.getElementById('nameInput').value.trim();
+    var selectedGender = document.querySelector('input[name="gender"]:checked').value;
+    
+    // Only save if name is not empty and a gender is selected
+    if (name && selectedGender) {
+        localStorage.setItem(name, selectedGender);
+    }
+});
+
+document.getElementById("form").onsubmit = function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    var name = document.getElementById('nameInput').value.trim();
+    var url = `https://api.genderize.io/?name=${name}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // Display gender prediction and probability
+            document.getElementById('gender-prediction').textContent = data.gender;
+            document.getElementById('gender-prob').textContent = data.probability;
+
+            // Check and display saved answer
+            var savedGender = localStorage.getItem(name);
+            if (savedGender) {
+                document.getElementById('saved-answer').textContent = savedGender;
+            } else {
+                document.getElementById('saved-answer').textContent = '';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data: ', error);
+        });
+};
