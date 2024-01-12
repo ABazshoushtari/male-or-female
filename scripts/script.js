@@ -66,8 +66,8 @@ document.getElementById("form").onsubmit = function(event) {
         .then(response => response.json())
         .then(data => {
             // Display gender prediction and probability
-            document.getElementById("gender-prediction").textContent = data.gender;
-            document.getElementById("gender-prob").textContent = data.probability;
+            document.getElementById("gender-prediction").textContent = "Gender: " + data.gender;
+            document.getElementById("gender-prob").textContent = "Prob: " + data.probability;
 
             // Check and display saved answer
             var savedGender = localStorage.getItem(name);

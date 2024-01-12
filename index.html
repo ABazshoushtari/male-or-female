@@ -13,7 +13,6 @@
                 <form id="form" action="https://api.genderize.io/">
                     Name 
                     <input type="text" name="name" id="nameInput" maxlength="255"/> <br/>
-                    <div id="error"></div>
                     <div class="form-item">
                         <input type="radio" name="gender" value="male"/> Male <br />
                         <input type="radio" name="gender" value="female"/> Female <br />
@@ -23,13 +22,14 @@
                         <button type="submit" id="submit">Submit</button> <br />
                         <button type="button" id="save">Save</button> <br />
                     </div>  
+                    <div id="error"></div>
                 </form>
             </div>
             <div id="right-col">
                 <div class="box" id="prediction-box">
                     <h1>Prediction</h1>
-                    <p id="gender-prediction"></p>
-                    <p id="gender-prob"></p>
+                    <p id="gender-prediction">Gender: </p>
+                    <p id="gender-prob">Prob: </p>
                 </div>
                 <div class="box" id="saved-box">
                     <h1>Saved Answer</h1>
